@@ -6,7 +6,7 @@ import './index.css'
 
 class GoogleSuggestions extends Component {
   state = {
-    searchInput: '',
+    searchInput: by,
   }
 
   updateSearchInput = value => {
