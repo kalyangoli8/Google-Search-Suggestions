@@ -6,10 +6,10 @@ import './index.css'
 
 class GoogleSuggestions extends Component {
   state = {
-    searchInput = '',
+    searchInput: '',
   }
 
-  UpdateSearchInput = value => {
+  updateSearchInput = value => {
     this.setSate({
       searchInput: value,
     })
@@ -23,11 +23,11 @@ class GoogleSuggestions extends Component {
 
   render() {
     const {searchInput} = this.state
-    const {SuggestionsList} = this.props
-    const searchResults = SuggestionsList.filter(eachSuggestion =>
-      eachSuggestion.Suggestion.toLowerCase().includes(
-        searchInput.toLocaleLowerCase(),
-      ),
+    const {suggestionsList} = this.props
+    const searchResults = suggestionsList.filter(eachSuggestion =>
+      eachSuggestion.suggestion
+        .toLowerCase()
+        .includes(searchInput.toLocaleLowerCase()),
     )
 
     return (
@@ -58,7 +58,7 @@ class GoogleSuggestions extends Component {
                 <SuggestionItem
                   key={eachSuggestion.id}
                   SuggestionDetails={eachSuggestion}
-                  UpdateSearchInput={this.UpdateSearchInput}
+                  updateSearchInput={this.updateSearchInput}
                 />
               ))}
             </ul>
