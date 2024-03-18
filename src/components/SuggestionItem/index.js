@@ -2,16 +2,16 @@
 import './index.css'
 
 const SuggestionItem = props => {
-  const {suggestiionDetails, UpdateSearchInput} = props
+  const {suggestiionDetails, updateSearchInput} = props
   const {Suggestion} = suggestiionDetails
 
   const onClickSuggestion = () => {
-    UpdateSearchInput(Suggestion)
+    updateSearchInput(Suggestion)
   }
 
   return (
     <li className="suggestion-item">
-      <p className="suggestion-text">{Suggestion}</p>
+      <p className="suggestion-text">{suggestion}</p>
       <button
         type="button"
         className="arrow-button"
